@@ -1,0 +1,23 @@
+slc:
+  image: tuyakhov/loopback
+  volumes:
+   - .:/code
+  entrypoint: slc
+  ports:
+    - "3000:3000"
+
+node:
+  image: tuyakhov/loopback
+  volumes:
+   - .:/code
+  working_dir: /code
+  entrypoint: node
+  command: .
+
+npm:
+  image: tuyakhov/loopback
+  volumes:
+   - .:/code
+  working_dir: /code
+  entrypoint: npm
+  command: install
