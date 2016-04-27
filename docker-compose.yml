@@ -3,17 +3,17 @@ slc:
   volumes:
    - .:/code
   entrypoint: slc
+  command: run
   ports:
     - "3000:3000"
-
-node:
+arc:
   image: tuyakhov/loopback
   volumes:
    - .:/code
-  working_dir: /code
-  entrypoint: node
-  command: .
-
+  entrypoint: slc
+  command: arc
+  ports:
+    - "51459:51459"
 npm:
   image: tuyakhov/loopback
   volumes:
