@@ -1,23 +1,39 @@
 slc:
   image: tuyakhov/loopback
   volumes:
-   - .:/code
+    - .:/code
   entrypoint: slc
-  command: run
+  command: --help
+nodemon:
+  image: tuyakhov/loopback
+  volumes:
+    - .:/code
+  entrypoint: nodemon
+  command: -L .
+  environment:
+    - PORT=3000
   ports:
     - "3000:3000"
+  links:
+    - mongodb:mongodb
 arc:
   image: tuyakhov/loopback
   volumes:
-   - .:/code
+    - .:/code
   entrypoint: slc
   command: arc
+  environment:
+    - PORT=51459
   ports:
     - "51459:51459"
 npm:
   image: tuyakhov/loopback
   volumes:
    - .:/code
-  working_dir: /code
   entrypoint: npm
   command: install
+mongodb:
+  image: mongo
+  restart: unless-stopped
+  ports:
+    - "27017:27017"

@@ -1,4 +1,12 @@
 {
+  "loopback-component-jsonapi": {
+    "include": [
+      {
+        "model": "Template",
+        "methods": "render"
+      }
+    ]
+  },
   "loopback-component-explorer": {
     "mountPath": "/explorer"
   }
