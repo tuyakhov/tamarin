@@ -1,0 +1,26 @@
+{
+  "name": "sender",
+  "plural": "senders",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "transport": {
+      "type": "string",
+      "required": true
+    },
+    "data": {
+      "type": "object",
+      "required": true
+    },
+    "credentials": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

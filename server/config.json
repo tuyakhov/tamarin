@@ -7,6 +7,7 @@
       "enableHttpContext": false
     },
     "rest": {
+      "supportedTypes": ["application/vnd.api+json"],
       "normalizeHttpPath": false,
       "xml": false
     },

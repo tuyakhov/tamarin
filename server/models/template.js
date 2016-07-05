@@ -3,7 +3,7 @@ module.exports = function(Template) {
         Template.findById(id, {}).then(function (instance) {
             Template.renderTemplate(instance, data).then(function (result) {
                 callback(null, result);
-            });
+            }).catch(callback);
         });
     };
 

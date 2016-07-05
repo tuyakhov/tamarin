@@ -13,7 +13,19 @@
       "./mixins"
     ]
   },
-  "Template": {
+  "template": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "message": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "sender": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "recipient": {
     "dataSource": "mongodb",
     "public": true
   }

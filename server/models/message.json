@@ -1,0 +1,58 @@
+{
+  "name": "message",
+  "plural": "messages",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "mixins": {
+    "Render": true
+  },
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "created_at": {
+      "type": "date",
+      "required": true
+    },
+    "data": {
+      "type": "object",
+      "required": true
+    },
+    "recipients": {
+      "type": "array",
+      "required": true
+    },
+    "sender_id": {
+      "type": "string",
+      "required": true
+    },
+    "template_id": {
+      "type": "string",
+      "required": true
+    },
+    "queued_at": {
+      "type": "date"
+    }
+  },
+  "rawProperties": {
+    "data": {
+      "type": "object",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "template": {
+      "model": "Template",
+      "type": "belongsTo",
+      "foreignKey": "template_id"
+    },
+    "sender": {
+      "model": "Sender",
+      "type": "belongsTo",
+      "foreignKey": "sender_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

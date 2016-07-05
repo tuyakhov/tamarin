@@ -32,6 +32,13 @@ npm:
    - .:/code
   entrypoint: npm
   command: install
+mocha:
+  image: tuyakhov/loopback
+  volumes:
+   - .:/code
+  entrypoint: mocha
+  environment:
+    NODE_ENV: test
 mongodb:
   image: mongo
   restart: unless-stopped
