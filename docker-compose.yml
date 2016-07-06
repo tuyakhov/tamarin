@@ -37,6 +37,7 @@ mocha:
   volumes:
    - .:/code
   entrypoint: mocha
+  command: ./tests --recursive
   environment:
     NODE_ENV: test
 mongodb:

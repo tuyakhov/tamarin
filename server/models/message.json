@@ -4,7 +4,13 @@
   "base": "PersistedModel",
   "idInjection": true,
   "mixins": {
-    "Render": true
+    "Render": true,
+    "TimeStamp" : {
+      "createdAt" : "created_at",
+      "updatedAt" : "updated_at",
+      "required" : false,
+      "validateUpsert": true
+    }
   },
   "options": {
     "validateUpsert": true

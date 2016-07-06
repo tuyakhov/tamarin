@@ -20,11 +20,13 @@
     "loopback-component-jsonapi": "^0.19.0",
     "loopback-connector-mongodb": "^1.13.3",
     "loopback-datasource-juggler": "^2.39.0",
+    "loopback-ds-timestamp-mixin": "^3.3.0",
     "mailgun-js": "^0.7.11",
     "serve-favicon": "^2.0.1"
   },
   "devDependencies": {
     "jshint": "^2.5.6",
+    "mockery": "^1.7.0",
     "nsp": "^2.1.0"
   },
   "repository": {

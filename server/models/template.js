@@ -1,4 +1,6 @@
 module.exports = function(Template) {
+    Template.validatesPresenceOf('body', 'name', 'alias');
+    
     Template.render = function(id, data, callback) {
         Template.findById(id, {}).then(function (instance) {
             Template.renderTemplate(instance, data).then(function (result) {

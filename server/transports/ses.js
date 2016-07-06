@@ -1,11 +1,12 @@
 var aws = require('aws-sdk');
 var SESTransport = function (settings) {
-    aws.config.(settings);
     this.source = settings.source;
-    this.service = aws.SES;
+    settings.credentials = new aws.Credentials(settings.credentials);
+    this.service = settings.service || new aws.SES(settings);
 };
 SESTransport.prototype = {
     dispatch: function (content, recipient) {
+        var self = this;
         return new Promise(function (resolve, reject) {
             var params = {
                 Destination: {
@@ -25,9 +26,9 @@ SESTransport.prototype = {
                         Charset: 'UTF-8'
                     }
                 },
-                Source: this.source
+                Source: self.source
             };
-            this.service.sendEmail(params, function(err, data) {
+            self.service.sendEmail(params, function(err, data) {
                 if (err) 
                     reject(err);
                 else     
