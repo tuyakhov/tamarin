@@ -17,7 +17,7 @@ SESTransport.prototype = {
                 Message: {
                     Body: {
                         Html: {
-                            Data: content.body,
+                            Data: content.body || '',
                             Charset: 'UTF-8'
                         }
                     },

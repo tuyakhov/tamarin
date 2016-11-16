@@ -11,7 +11,7 @@ MailgunTransport.prototype = {
                 to: recipient,
                 from: self.source,
                 subject: content.title,
-                text: content.body
+                text: content.body || ''
             };
             self.service.messages().send(data, function(err, body) {
                 if (err)
