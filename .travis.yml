@@ -13,5 +13,5 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 
 script:
-  - docker-compose run npm install
+  - docker-compose run npm install --silent
   - docker-compose run mocha
