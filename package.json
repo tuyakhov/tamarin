@@ -1,5 +1,5 @@
 {
-  "name": "tamarin",
+  "name": "tamarin-server",
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
@@ -34,6 +34,20 @@
     "type": "",
     "url": ""
   },
-  "license": "UNLICENSED",
-  "description": "tamarin"
+  "keywords": [
+    "twilio",
+    "email",
+    "send messages",
+    "transactional",
+    "messages",
+    "restful",
+    "rest",
+    "api",
+    "express",
+    "notifications",
+    "bulk messages",
+    "messages"
+  ],
+  "license": "MIT",
+  "description": "Tamarin is a powerful API that enables you to send and track transactional or bulk messages"
 }
