@@ -2,12 +2,14 @@ slc:
   image: tuyakhov/loopback
   volumes:
     - .:/code
+  working_dir: /code
   entrypoint: slc
   command: --help
 nodemon:
   image: tuyakhov/loopback
   volumes:
     - .:/code
+  working_dir: /code
   entrypoint: nodemon
   command: -L .
   environment:
@@ -20,6 +22,7 @@ arc:
   image: tuyakhov/loopback
   volumes:
     - .:/code
+  working_dir: /code
   entrypoint: slc
   command: arc
   environment:
@@ -30,12 +33,14 @@ npm:
   image: tuyakhov/loopback
   volumes:
    - .:/code
+  working_dir: /code
   entrypoint: npm
   command: install
 mocha:
   image: tuyakhov/loopback
   volumes:
    - .:/code
+  working_dir: /code
   entrypoint: mocha
   command: ./tests --recursive
   environment:
