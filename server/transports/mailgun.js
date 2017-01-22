@@ -1,6 +1,5 @@
-var mailgun = require('mailgun-js');
 var MailgunTransport = function (settings) {
-    this.service = mailgun(settings.credentials);
+    this.service = require('mailgun-js')(settings.credentials);
     this.source = settings.from;
 };
 MailgunTransport.prototype = {
