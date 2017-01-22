@@ -13,6 +13,7 @@ MailgunTransport.prototype = {
                 text: content.body || ''
             };
             self.service.messages().send(data, function(err, body) {
+                resolve(body);
                 if (err)
                     reject(err);
                 else
