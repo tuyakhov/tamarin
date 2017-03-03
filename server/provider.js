@@ -1,3 +1,5 @@
+var log = require('./logger');
+
 var Provider = function (sender) {
     var settings = sender.data || {};
     settings.credentials = sender.credentials || {};
@@ -12,12 +14,12 @@ Provider.prototype.createTransport = function (transport, settings) {
         try {
             transportModule = new (require('./transports/' + transport))(settings);
         } catch (e) {
-            console.log(e.stack);
+            log.error(e.stack);
         }
     } else {
         transportModule = {
             dispatch: function (message, recipient) {
-                console.log('Requested transport plugin "' + transport + '" could not be initiated');
+                log.error('Requested transport plugin "' + transport + '" could not be initiated');
             }
         }
     }
@@ -25,9 +27,10 @@ Provider.prototype.createTransport = function (transport, settings) {
 };
 
 Provider.prototype.send = function(message, recipients) {
-    var promises = [];
-    for (var i in recipients) {
-        promises.push(this.transport.dispatch(message, recipients[i].destination));
+    var promises = [],
+        i;
+    for (i = 0; i < recipients.length; ++i) {
+        promises.push(this.transport.dispatch(message, recipients[i]));
     }
     return Promise.all(promises);
 };

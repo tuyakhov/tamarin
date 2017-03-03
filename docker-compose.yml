@@ -14,6 +14,8 @@ nodemon:
   command: -L .
   environment:
     - PORT=3000
+    - MONGODB_HOST=mongodb
+    - MONGODB_PORT=27017
   ports:
     - "3000:3000"
   links:

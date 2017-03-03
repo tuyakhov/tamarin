@@ -52,17 +52,6 @@ describe('Message', function() {
                 done();
             });
         });
-        it('should create a recipient', function (done) {
-            var Recipient = app.models.Recipient;
-            Recipient.create({
-                destination: "test@email.com"
-            }, function(err, recipient) {
-                if (err) return done(err);
-                recipientId = recipient.id;
-                assert.ok(recipient.destination);
-                done();
-            });
-        });
         it('should render and send a message using provider', function (done) {
             var Message = app.models.Message;
             Message.create({
@@ -70,7 +59,7 @@ describe('Message', function() {
                     title: {username: "Nick"},
                     body: {username: "Nick"}
                 },
-                recipients: [recipientId],
+                recipients: ["nick@example.com"],
                 sender_id: senderId,
                 template_id: templateId,
                 queued_at: 345345

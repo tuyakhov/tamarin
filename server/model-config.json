@@ -25,9 +25,5 @@
   "sender": {
     "dataSource": "mongodb",
     "public": true
-  },
-  "recipient": {
-    "dataSource": "mongodb",
-    "public": true
   }
 }

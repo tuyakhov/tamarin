@@ -1,3 +1,5 @@
+var log = require('../logger');
+
 var MailgunTransport = function (settings) {
     this.service = require('mailgun-js')(settings.credentials);
     this.source = settings.from;
@@ -5,6 +7,7 @@ var MailgunTransport = function (settings) {
 MailgunTransport.prototype = {
     dispatch: function (content, recipient) {
         var self = this;
+        log.info('Dispatch mailgun message to %s', recipient);
         return new Promise(function (resolve, reject) {
             var data = {
                 to: recipient,

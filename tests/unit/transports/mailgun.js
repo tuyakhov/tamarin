@@ -21,7 +21,6 @@ describe('Mailgun', function() {
                 from: "you@samples.mailgun.org"
             });
             transport.service = Service;
-            
             transport.dispatch({
                 title: "MAGA",
                 body: "Make America Great Again"
