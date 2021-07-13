@@ -1,6 +1,7 @@
 {
   "mongodb": {
     "name": "mongodb",
-    "connector": "mongodb"
+    "connector": "mongodb",
+    "protocol": "mongodb+srv"
   }
 }
