@@ -1,6 +1,6 @@
 FROM node:6.10-alpine
 
-ENV TAMARIN_VERSION 0.0.7
+ENV TAMARIN_VERSION 0.0.8
 
 RUN npm install -g strongloop
 
